@@ -5,7 +5,9 @@ extend Aggressive
 extend Defensive
 
 @chooser = Proc.new do
-  rand() <= 0.5 ? act_aggressively : act_defensively
+  # All aggressive!  All the time!!!!
+  # WIP
+  act_aggressively
 end
 
 on_turn do
