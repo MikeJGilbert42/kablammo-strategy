@@ -6,7 +6,7 @@ module Strategy::Model
     attr_accessor :name, :duration, :type, :abilities
 
     def initialize(parent, args)
-      super(args)
+      super
       @parent = parent
     end
 
