@@ -5,8 +5,9 @@ module Strategy::Model
     attr_accessor :name, :turn
 
     def initialize(args)
-      super nil, args
-      @turn = Turn.new self, @turn
+      asdf = JSON.parse(args["value"])
+      #print "Current board: #{asdf}"
+      super asdf
     end
 
     def board

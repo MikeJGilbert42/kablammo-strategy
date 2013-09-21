@@ -5,11 +5,7 @@ module Strategy::Model
     attr_accessor :width, :height, :robots, :walls, :power_ups, :turn
 
     def initialize(parent, args)
-      super
-
-      @robots = @robots.map { |r| Robot.new self, r }
-      @walls = @walls.map { |w| Wall.new self, w }
-      @power_ups = @power_ups.map { |p| PowerUp.new self, p }
+      super(args)
       @turn = parent
     end
 

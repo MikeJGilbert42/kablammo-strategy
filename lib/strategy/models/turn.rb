@@ -5,9 +5,9 @@ module Strategy::Model
     attr_accessor :board, :battle
 
     def initialize(parent, args)
-      super
+      super(args)
       @battle = parent
-      @board = Board.new self, @board
+      #@board = Board.new self, args
     end
 
     def to_s

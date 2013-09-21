@@ -7,7 +7,7 @@ module Strategy::Model
     attr_accessor :last_turn, :username, :x, :y, :armor, :ammo, :rotation, :direction, :abilities, :power_ups, :board
 
     def initialize(parent, args)
-      super
+      super(args)
       @power_ups = @power_ups.map { |p| PowerUp.new self, p }
       @board = parent
     end

@@ -6,7 +6,7 @@ module Strategy::Model
     attr_accessor :board
 
     def initialize(parent, args)
-      super
+      super(args)
       @board = parent
     end
 
