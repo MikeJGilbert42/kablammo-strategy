@@ -24,7 +24,7 @@ module Aggressive
     return hunt unless enemy
     return rest if my.ammo == 0
     return move_towards! enemy if obscured? enemy
-    return fire_at! enemy, 0.75 if can_fire_at? enemy
+    return fire_at! enemy if can_fire_at? enemy
     return aim_at! enemy unless aiming_at? enemy
     move_towards! enemy
   end
