@@ -1,10 +1,9 @@
-require './examples/utils.rb'
+require './examples/base_strategy.rb'
 
-class JustFire
-  include Utils
-
+class JustFire < BaseStrategy
   def execute
-    return rest if my.ammo == 0
-    fire_at!(closest(opponents))
+    enemy = closest(opponents)
+    return rest if my.ammo == 0 || enemy.nil?
+    fire_at!(enemy)
   end
 end
