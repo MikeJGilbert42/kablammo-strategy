@@ -1,15 +1,10 @@
-require './examples/aggressive'
-require './examples/defensive'
+require './examples/just_fire.rb'
+require './examples/long_patroller.rb'
 
-extend Aggressive
-extend Defensive
-
-@chooser = Proc.new do
-  # All aggressive!  All the time!!!!
-  # WIP
-  act_aggressively
-end
+STRATEGIES_PER_MAP = { 'Battle Royale' => JustFire,
+                       'KISS'          => JustFire }
 
 on_turn do
-  @chooser.call
+  @strategy ||= (STRATEGIES_PER_MAP[battle.name] || LongPatroller).new self
+  @strategy.execute
 end
