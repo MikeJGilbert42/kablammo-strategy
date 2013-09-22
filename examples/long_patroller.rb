@@ -42,8 +42,8 @@ class LongPatroller < BaseStrategy
     if !@fired && @retreated_from.nil?
       puts "FIRE!"
       # Fire!
-      fire_at! @enemy
       @fired = true
+      fire_at! @enemy
     elsif @retreated_from != nil
       puts "Ready, aim!"
       # Ready, aim!
