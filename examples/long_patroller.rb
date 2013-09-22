@@ -38,14 +38,13 @@ class LongPatroller < BaseStrategy
   end
 
   def combat_move
-    puts "Retreated from: #{@retreated_from}"
     if !@fired && @retreated_from.nil?
       puts "FIRE!"
       # Fire!
-      fire_at! @enemy
       @fired = true
+      fire_at! @enemy
     elsif @retreated_from != nil
-      puts "Ready, aim!"
+      puts "Ready, aim!" if !aiming_at?(@enemy)
       # Ready, aim!
       return aim_at!(@enemy) if !aiming_at?(@enemy)
       # Charge!
